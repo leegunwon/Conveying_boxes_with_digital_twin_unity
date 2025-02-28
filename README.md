@@ -67,6 +67,7 @@
 │   ├── 📦 **turtlebot_cosmo_interface**   # 커스텀 srv
 │   └── 📦 **turtlebot3_manipulation**     # Turtlebot waffle과 Manipulation X가 결합된 로봇 실행 
 │  
-├── 📄 execute_system.sh                   # ROS 2 패키지 설정 파일  
+├── 📄 execute_system_computer.sh          # 컴퓨터에서 실행 명령
+├── 📄 execute_system_robot.sh             # 로봇에서 실행 명령
 └── 📄 README.md 
 '''
