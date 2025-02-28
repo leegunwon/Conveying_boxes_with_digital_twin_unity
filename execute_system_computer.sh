@@ -1,5 +1,4 @@
 #!/bin/bash
-cd ~/serial_ws
 colcon build
 source install/setup.bash
 

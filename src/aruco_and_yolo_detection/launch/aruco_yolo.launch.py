@@ -1,5 +1,6 @@
 import launch
 from launch_ros.actions import Node
+from launch.actions import ExecuteProcess
 
 def generate_launch_description():
     nodes = [
@@ -21,6 +22,10 @@ def generate_launch_description():
             package='aruco_and_yolo_detection',
             executable='yolo_detect',
             name='yolo_detect',
+            output='screen',
+        ),
+        ExecuteProcess(
+            cmd=['ros2', 'launch', 'turtlebot3_manipulation_bringup', 'hardware.launch.py'],
             output='screen',
         ),
     ]
