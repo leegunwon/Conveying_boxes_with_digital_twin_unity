@@ -69,7 +69,7 @@ class IntegratedProcess(Node):
         self.right_low_y_offset = -0.01
 
         self.right_high_x_offset = 0.013
-        self.right_high_y_offset = -0.00
+        self.right_high_y_offset = -0.005
 
         self.left_low_x_offset = 0.005
         self.left_low_y_offset = 0.015
@@ -102,6 +102,17 @@ class IntegratedProcess(Node):
         msg.data = data
         self.publisher_conveyor.publish(msg)
         self.get_logger().info(f'Published: {data}')
+
+    def conv_stop_publishing(self):
+        data = {
+            "control": "stop"
+        }
+        data = json.dumps(data)
+        msg = String()
+        msg.data = data
+        self.publisher_conveyor.publish(msg)
+        self.get_logger().info(f'Published: {data}')
+
 
 
     def gui_command(self, msg):
@@ -140,8 +151,9 @@ class IntegratedProcess(Node):
                 marker_id = marker.id
                 x_position = marker.pose.pose.position.x
                 if marker_id == self.goal and abs(x_position) <= 0.05:  # goal 을 가까이서 감지하면 정지    #여기도 바꾸기
+                    print(f'marker id = {marker_id} , self.goal = {self.goal}')
                     print("find") 
-                    time.sleep(1)
+                    time.sleep(1.2)
 
                     self.publish_cmd_vel(0.0)
                     self.final_task()
@@ -166,17 +178,16 @@ class IntegratedProcess(Node):
                     print(f'self.yolo_y {self.yolo_y} ')
                     print(f'self.red_count {self.red_count} ')
                     print(f'self.blue_count {self.blue_count} ')
+                    print(f'self.goal {self.goal} ')
+
                     
                     print(f"Detected coordinates: {self.yolo_x}, {self.yolo_y}")
                     print("done")
                     print(self.yolofind)
                     if self.state == 'YOLO':
                         if not self.yolofind:
-                            if (self.yolo_box_id == 0) or (self.yolo_box_id == 1):
-                                self.yolofind = True
-                            print("done2")
-
                             if  (self.yolo_box_id == 0 and self.red_count != 0) or (self.yolo_box_id == 1 and self.blue_count != 0):
+                                self.yolofind = True
                                 print("done2")
                                 self.yolo_arm_controll()
                             
@@ -190,6 +201,7 @@ class IntegratedProcess(Node):
                         if not self.yolofind and abs(self.yolo_x) < 0.01:
                             self.publish_cmd_vel(0.0)
                             self.yolofind = True
+
                             self.purple_arm_control()
                         elif not self.yolofind and self.yolo_x > 0.01:
                             self.publish_cmd_vel(-0.01)
@@ -228,6 +240,7 @@ class IntegratedProcess(Node):
             if current_z_position < 0.7:
                 self.publish_cmd_vel(-0.04)
             else:
+                self.conv_stop_publishing()
                 self.publish_cmd_vel(0.0)
                 self.get_logger().info("Target reached")
                 self.box_home_arm_controll()
@@ -280,10 +293,7 @@ class IntegratedProcess(Node):
             time.sleep(1)
 
             ########################################################################
-            print(self.yolo_y, self.yolo_x)
-            print(self.yolo_y, self.yolo_x)
-            print(self.yolo_y, self.yolo_x)
-            print(self.yolo_y, self.yolo_x)
+
 
             if self.yolo_x > 0 and self.yolo_y > 0:   # right low
                 yolo_robot_y = self.yolo_x + self.right_low_y_offset       # hight  += 아래   -= 위
@@ -426,7 +436,7 @@ class IntegratedProcess(Node):
                 response = arm_client.send_request(1, "box_back_01")
                 arm_client.get_logger().info(f'Response: {response.response}')   
 
-                time.sleep(1)
+                time.sleep(5)   # 도는 시간 약 4초 줄이면 돌면서 아르코인식하는 경우가 생김
 
 
                 print("jobs_done")
@@ -443,15 +453,22 @@ class IntegratedProcess(Node):
         time.sleep(1)
         response = arm_client.send_request(2, "open")
         arm_client.get_logger().info(f'Response: {response.response}')       
+
         self.state = "FINISH"
 
     def finish_task(self):
         # 모든 작업이 완료되었을 때
         if self.state == 'FINISH':
+            arm_client = TurtlebotArmClient()
+            response = arm_client.send_request(1, "box_back_01")
+            self.home2_arm_controll()  # 위치 다를 시 변경 home_arm_controll
+            response = arm_client.send_request(2, "open")
+            arm_client.get_logger().info(f'Response: {response.response}')
+
             self.get_logger().info("All tasks are complete!")
             self.state == 'WAIT_CMD'
             self.destroy_node()
-            rclpy.shutdown()
+            rclpy.shutdown()   # 지우면 여러번 사용 가능
 
     def publish_cmd_vel(self, linear_x, angular_z=0.0):
         self.twist.linear.x = linear_x
