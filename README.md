@@ -20,14 +20,6 @@
 - **Vision을 활용한 제어** : 프로젝트에 사용될 박스와 basket에 있는 mark를 학습시킨 **YOLO v8s**모델을 활용하여 거리를 측정한 후 물체를 Pick up 하는 동작을 수행.
 
 
-## 요구 사항
-
-- **Unity**: 디지털 트윈 환경 구축.
-- **ROS 2**: 실시간 데이터 통신 및 시뮬레이션 제어.
-- **Python**: ROS 2 통신 스크립트를 작성.
-- **Unity ROS 2 bridge**: Unity와 ROS 2를 실시간으로 연결하는 Unity 패키지.
-- **C#**: Unity 시뮬레이션을 제어하는 스크립트를 작성합니다.
-
 ## 환경 사진
 ### Unity
 ![스크린샷 2025-02-28 14-02-04](https://github.com/user-attachments/assets/e000dd81-bd40-42d4-81c5-76c17863ab7d)
