@@ -23,6 +23,7 @@
 - **C#**: Unity 시뮬레이션을 제어하는 스크립트를 작성합니다.
 
 ## 환경 사진
+![스크린샷 2025-02-28 14-02-04](https://github.com/user-attachments/assets/e000dd81-bd40-42d4-81c5-76c17863ab7d)
 ![Uploading 스크린샷 2025-02-28 14-02-04.png…]()
 
 
