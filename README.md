@@ -35,11 +35,9 @@
 1. **Unity** (6000.0.39f1)
 2. **ROS 2** (Humble)
 3. **Python 3.8 이상**
-4. PyQt5
-5. openCV
-6. numpy
-7. ultraystics
-8. yaml
+4. **PyQt5**
+5. **openCV**
+7. **ultraystics**
 
 ## 실행 방법
 ### 로봇
