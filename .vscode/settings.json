@@ -1,0 +1,39 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/lee/serial_ws/install/turtlebot_moveit/local/lib/python3.10/dist-packages",
+        "/home/lee/serial_ws/install/turtlebot_cosmo_interface/local/lib/python3.10/dist-packages",
+        "/home/lee/serial_ws/install/serial_package/lib/python3.10/site-packages",
+        "/home/lee/serial_ws/install/robot_control/lib/python3.10/site-packages",
+        "/home/lee/serial_ws/install/processing_image/lib/python3.10/site-packages",
+        "/home/lee/serial_ws/install/conveyor_system_gui/lib/python3.10/site-packages",
+        "/home/lee/turtlebot3_ws/install/turtlebot_moveit/local/lib/python3.10/dist-packages",
+        "/home/lee/turtlebot3_ws/install/turtlebot_cosmo_interface/local/lib/python3.10/dist-packages",
+        "/home/lee/turtlebot3_ws/build/turtlebot3_teleop",
+        "/home/lee/turtlebot3_ws/install/turtlebot3_teleop/lib/python3.10/site-packages",
+        "/home/lee/turtlebot3_ws/build/turtlebot3_example",
+        "/home/lee/turtlebot3_ws/install/turtlebot3_example/lib/python3.10/site-packages",
+        "/home/lee/turtlebot3_ws/install/turtlebot3_msgs/local/lib/python3.10/dist-packages",
+        "/home/lee/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/lee/serial_ws/install/turtlebot_moveit/local/lib/python3.10/dist-packages",
+        "/home/lee/serial_ws/install/turtlebot_cosmo_interface/local/lib/python3.10/dist-packages",
+        "/home/lee/serial_ws/install/serial_package/lib/python3.10/site-packages",
+        "/home/lee/serial_ws/install/robot_control/lib/python3.10/site-packages",
+        "/home/lee/serial_ws/install/processing_image/lib/python3.10/site-packages",
+        "/home/lee/serial_ws/install/conveyor_system_gui/lib/python3.10/site-packages",
+        "/home/lee/turtlebot3_ws/install/turtlebot_moveit/local/lib/python3.10/dist-packages",
+        "/home/lee/turtlebot3_ws/install/turtlebot_cosmo_interface/local/lib/python3.10/dist-packages",
+        "/home/lee/turtlebot3_ws/build/turtlebot3_teleop",
+        "/home/lee/turtlebot3_ws/install/turtlebot3_teleop/lib/python3.10/site-packages",
+        "/home/lee/turtlebot3_ws/build/turtlebot3_example",
+        "/home/lee/turtlebot3_ws/install/turtlebot3_example/lib/python3.10/site-packages",
+        "/home/lee/turtlebot3_ws/install/turtlebot3_msgs/local/lib/python3.10/dist-packages",
+        "/home/lee/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "ros.distro": "humble"
+}

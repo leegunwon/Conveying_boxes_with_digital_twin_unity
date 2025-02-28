@@ -1,0 +1,8 @@
+right_low_x_offset : 0.0
+right_low_y_offset : 0.0
+right_high_x_offset : 0.0
+right_high_y_offset : 0.0
+left_low_x_offset : 0.0
+left_low_y_offset : 0.0
+left_high_x_offset : 0.0
+left_high_y_offset : 0.0

@@ -1,0 +1,31 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/lee/serial_ws/install/turtlebot_cosmo_interface/include/**",
+        "/home/lee/serial_ws/install/turtlebot3_manipulation_hardware/include/**",
+        "/home/lee/turtlebot3_ws/install/turtlebot_cosmo_interface/include/**",
+        "/home/lee/turtlebot3_ws/install/turtlebot3_fake_node/include/**",
+        "/home/lee/turtlebot3_ws/install/turtlebot3_msgs/include/**",
+        "/home/lee/turtlebot3_ws/install/turtlebot3_manipulation_hardware/include/**",
+        "/home/lee/turtlebot3_ws/install/turtlebot3_gazebo/include/**",
+        "/home/lee/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces/include/**",
+        "/home/lee/turtlebot3_ws/install/dynamixel_sdk/include/**",
+        "/opt/ros/humble/include/**",
+        "/home/lee/serial_ws/src/turtlebot3_manipulation/turtlebot3_manipulation_hardware/include/**",
+        "/home/lee/serial_ws/src/turtlebot3_manipulation/turtlebot3_manipulation_teleop/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
