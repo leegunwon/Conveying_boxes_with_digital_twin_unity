@@ -1,7 +1,7 @@
 # 디지털 트윈을 이용한 박스 컨베이어 시스템 (Unity)
 
 ## 개요
-본 프로젝트는 PyQt5 기반의 GUI를 통해 명령을 입력받아, Aruco marker을 통해 주행하고 YOLO v8s 모델을 활용하여 박스를 탐지하고 **manipulator**와 **conveyor**으로 이동시켜 자동으로 물건을 분류하는 시스템입니다.
+본 프로젝트는 **PyQt5** 기반의 GUI를 통해 명령을 입력받아, **Aruco marker**을 통해 주행하고 **YOLO v8s** 모델을 활용하여 박스를 탐지하고 **manipulator**와 **conveyor**으로 이동시켜 자동으로 물건을 분류하는 시스템입니다.
 
 위 과정은 **Unity**로 구축한 디지털 트윈 환경에서 모니터링 가능하도록 구현되어 있습니다.
 
@@ -35,6 +35,11 @@
 1. **Unity** (6000.0.39f1)
 2. **ROS 2** (Humble)
 3. **Python 3.8 이상**
+4. PyQt5
+5. openCV
+6. numpy
+7. ultraystics
+8. yaml
 
 ## 실행 방법
 ### 로봇
