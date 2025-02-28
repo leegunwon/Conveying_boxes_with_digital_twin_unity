@@ -52,7 +52,6 @@
 ├── 📂 **src**                 # ROS 2 패키지 소스 코드  
 │   ├── 📦 **aruco_and_yolo_detection**    # Aruco 마커 및 YOLO 탐지 패키지  
 │   ├── 📦 **conveyor_system_gui**         # PyQt5 기반 GUI 패키지  
-│   ├── 📦 **processing_image**            # 이미지 처리 관련 코드  
 │   ├── 📦 **conveyor_controller**         # 아두이노와 Serial 통신 (컨베이어 벨트 제어) 
 │   ├── 📦 **robot_control**               # Turtlebot waffle과 Manipulator를 제어
 │   ├── 📦 **turtlebot_moveit**            # MoveIt을 활용한 Manipulator 제어 인터페이스   
